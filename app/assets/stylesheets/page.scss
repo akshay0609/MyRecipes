@@ -1,0 +1,38 @@
+// Place all the styles related to the page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h2{
+	font-weight: 	 bold;
+	color: 				 black;
+}
+
+.jumbotron{
+	background-image: url('http://restaurantmenudesignstyle.com/wp-content/uploads/2016/01/indian-restaurant-menu-background.cropped-orange-background-with-ornamental-patterns.jpg');
+}
+
+#sign_up{
+	background:    #293325;
+	border:        1px solid #5d72b2;
+	border-radius: 999px;
+	box-shadow:    0 1px 0 0 #444;
+	color:         #fff;
+	display:       inline-block;
+	padding:       9px 21px;
+	font:          normal 700 21px/1 "Calibri", sans-serif;
+	text-align:    center;
+	text-shadow:   2px 2px 0 #000;
+	margin-top: 	 10px;
+}
+
+.details_recipe{
+	background:    #76a5af;
+	border-radius: 5px;
+	color:         #fff;
+	display:       inline-block;
+	padding:       8px 20px;
+	font:          normal 700 15px/1 "Ubuntu", sans-serif;
+	text-align:    center;
+	text-shadow:   1px 1px 0 #000;
+	margin-top:		 12px;
+}
