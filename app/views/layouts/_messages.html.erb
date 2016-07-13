@@ -1,0 +1,6 @@
+<% flash.each do |message_type, message|%>
+    <div class="alert alert-<%=message_type%>" style="margin-top: 10px">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong><%= message_type.capitalize%></strong>! <%= message%>
+    </div>
+<%end%>
