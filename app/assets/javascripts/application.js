@@ -15,3 +15,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$('document').ready(function(){
+    image_size_validation()
+});

@@ -1,58 +1,27 @@
 <div class="container">
     <h3 class="recipe-title">All Recipes</h3>
     <hr>
-
-    <%@recipe.reverse_each do |recipe|%>
-        <div class="row">
-          <div class="container">
-              <div class="col-md-4">
-                <div class="card">
-                  <!--<img class="card-img-top" data-src="..." alt="Card image cap">-->
-                  <div class="card-block">
-                    <h4 class="card-title"><%= truncate(recipe.name, length: 40)%></h4>
-                    <p class="card-text">
-                      <p><%= truncate( recipe.summary,length: 50) %></p>
-                      <p>
-                        <small><%= time_ago_in_words(recipe.created_at)%>
-                        <i>Created by <b><a href=""><%=recipe.chef.chefname%></a></b></i>
-                        </small>
-                      </p>
-                    </p>
-                    <a href="<%=recipe_path(recipe)%>" class="btn btn-warning-outline">Read More</a>
-                  </div>
+    <div class="row">
+      <div class="container">
+        <%@recipe.reverse.each do |recipe|%>
+          <div class="col-md-4">
+            <div class="card">
+              <%= image_tag(recipe.picture.url, class: "card-img-top", width: "336px", height: "150px") if recipe.picture?%>
+              <div class="card-block">
+                <h4 class="card-title"><%= truncate(recipe.name, length: 40)%></h4>
+                <div class="card-text">
+                  <p><%= truncate( recipe.summary,length: 50) %></p>
+                  <p>
+                    <small><%= time_ago_in_words(recipe.created_at)%>
+                    <i>Created by <b><a href=""><%=recipe.chef.chefname%></a></b></i>
+                    </small>
+                  </p>
                 </div>
+                <a href="<%=recipe_path(recipe)%>" class="btn btn-warning-outline">Read More</a>
               </div>
-              <%next%>
-
-              <div class="col-md-4">
-                <div class="card">
-                  <!--<img class="card-img-top" data-src="..." alt="Card image cap">-->
-                  <div class="card-block">
-                    <h4 class="card-title"><%= truncate(recipe.name, length: 40)%></h4>
-                    <p class="card-text">
-                    <p><%= truncate( recipe.summary,length: 50) %></p>
-                    <p><small><%= time_ago_in_words(recipe.created_at)%></small></p>
-                    </p>
-                    <a href="#" class="btn btn-warning-outline">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <%next%>
-
-              <div class="col-md-4">
-                <div class="card">
-                  <!--<img class="card-img-top" data-src="..." alt="Card image cap">-->
-                  <div class="card-block">
-                    <h4 class="card-title"><%= truncate(recipe.name, length: 40)%></h4>
-                    <p class="card-text">
-                    <p><%= truncate( recipe.summary,length: 50) %></p>
-                    <p><small><%= time_ago_in_words(recipe.created_at)%></small></p>
-                    </p>
-                    <a href="#" class="btn btn-warning-outline">Read More</a>
-                  </div>
-                </div>
-              </div>
+            </div>
           </div>
-        </div>
-    <%end%>
+        <%end%>
+      </div>
+    </div>
 </div>

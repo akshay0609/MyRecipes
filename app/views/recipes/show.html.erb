@@ -15,7 +15,7 @@
     <div class="col-md-4 " style="padding-left: 15px">
       <div class="card">
           <div class="card-block text-center" >
-            User Image will be come here
+            <%= image_tag(@recipe.picture.url, class: "card-img-top", width: "320px", height: "200px") if @recipe.picture?%>
           </div>
       </div>
     </div>
