@@ -2,6 +2,7 @@ $navbar-default-bg: #eeeeee;
 $jumbotron-bg: #eceff1;
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-compass";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
