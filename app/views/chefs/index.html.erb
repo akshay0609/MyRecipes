@@ -1,0 +1,14 @@
+<div class="text-center">
+  <span style="margin-left: 100px"><%= will_paginate @chef%></span>
+    <% @chef.each do |chef|%>
+      <div class="row">
+          <div class="card col-sm-3 col-sm-offset-5">
+            <%= image_tag( "http://gurucul.com/wp-content/uploads/2015/01/default-user-icon-profile.png", class:"card-img-top")%>
+            <div class="card-block">
+              <label>Chef Name :- </label>
+              <%= chef.chefname %>
+            </div>
+          </div>
+      </div>
+    <% end %>
+</div>

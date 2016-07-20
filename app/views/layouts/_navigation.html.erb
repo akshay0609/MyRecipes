@@ -12,20 +12,19 @@
   <!-- Collection of nav links, forms, and other content for toggling -->
   <div id="navbarCollapse" class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
-      <li class=""><a href="/home">Home</a></li>
-      <li role="presentation" class="dropdown">
-        <a class="" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-          Recipes <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
+      <% if logged_in? %>
           <li class=""><a href="/recipes">Recipes</a></li>
           <li class=""><a href="/recipes/new">Create New Recipes</a></li>
-        </ul>
-      </li>
-
+      <%else%>
+          <li class=""><a href="/home">Home</a></li>
+      <%end%>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Login</a></li>
+      <% if logged_in? %>
+      <li><a href="/logout">Logout</a></li>
+     <%else%>
+      <li><a href="/login">Login</a></li>
+     <%end%>
     </ul>
     <form role="search" class="navbar-form navbar-right">
       <div class="form-group">

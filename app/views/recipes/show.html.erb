@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h3 class="recipe-title">
     <%=@recipe.name%>
-    <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-success", style: "float: right"%>
+    <%= (link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-success", style: "float: right") if current_user == @recipe%>
   </h3><hr>
   <div class="row">
     <div class="col-md-8 card">
@@ -9,7 +9,21 @@
         <h4><%= @recipe.summary%></h4>
         <hr>
         <p><strong>Steps</strong></p>
-        <p><%=simple_format(@recipe.description)%></p>
+        <p>
+          <%=simple_format(@recipe.description)%>
+          <div class="pull-right">
+            <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">
+                  <%= @recipe.thumbs_up_total %>&nbsp
+                </span>
+            <%end%>
+            <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+                <span class="glyphicon glyphicon-thumbs-down" style="color: red" aria-hidden="true">
+                  <%= @recipe.thumbs_down_total %>
+                </span>
+            <%end%>
+          </div>
+        </p>
       <p>
     </div>
     <div class="col-md-4 " style="padding-left: 15px">
